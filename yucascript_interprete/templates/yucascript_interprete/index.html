@@ -1,3 +1,4 @@
+{% load staticfiles %}
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -7,9 +8,9 @@
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Import materialize.css-->
-    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
-    <link type="text/css" rel="stylesheet" href="lib/codemirror.css">
-    <link rel="stylesheet" href="theme/yonce.css">
+    <link type="text/css" rel="stylesheet" href="{% static 'yucascript_interprete/css/materialize.min.css' %}"  media="screen,projection"/>
+    <link type="text/css" rel="stylesheet" href="{% static 'yucascript_interprete/lib/codemirror.css' %}">
+    <link rel="stylesheet" href="{% static 'yucascript_interprete/theme/yonce.css' %}">
     <title>Lenguaje</title>
 </head>
 <body>
@@ -17,14 +18,14 @@
     <header>
             <nav class="nav-extended">
                 <div class="nav-wrapper purple darken-1">
-                    <img class="brand-logo" src="img/logo.png" height="70" alt="">
+                    <img class="brand-logo" src="{% static 'yucascript_interprete/img/logo.png' %}" height="70" alt="">
                     <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
                     
                 </div>
                 <div class="nav-content purple">
                     <ul class="tabs tabs-transparent">
                         <li class="tab waves-effect waves-light modal-trigger" href="#modal1"><a href="#test1">Abrir</a></li>
-                        <li class=" tab waves-effect waves-light"><a href="#test1">Verificar</a></li>
+                        <li class=" tab waves-effect waves-light"><a onclick="verificar()">Verificar</a></li>
                     </ul>
                 </div>
             </nav>
@@ -58,9 +59,10 @@
             <div id="editor"></div>
     </section>
 
-    <script type="text/javascript" src="js/materialize.min.js"></script>
-    <script src="lib/codemirror.js"></script>
-    <script src="mode/javascript/javascript.js"></script>
-    <script src="js/main.js"></script>
+    <script type="text/javascript" src="{% static 'yucascript_interprete/js/materialize.min.js' %}"></script>
+    <script src="{% static 'yucascript_interprete/lib/codemirror.js' %}"></script>
+    <script src="{% static 'yucascript_interprete/mode/javascript/javascript.js' %}"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="{% static 'yucascript_interprete/js/main.js' %}"></script>
 </body>
 </html>
