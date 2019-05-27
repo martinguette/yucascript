@@ -7,14 +7,22 @@ gramatica = """
     sen_if: "Syuca" corchete_abre condicion corchete_cierra llave_abre sentencias llave_cierra
     sen_for: "Fyuca" condicion llave_abre sentencias llave_cierra
     sen_while: "Myuca" corchete_abre condicion corchete_cierra llave_abre sentencias llave_cierra
-    sen_asig: "nuevayuca" cierra_linea
-    condicion: WORD comparador WORD | WORD | "!" WORD 
+    sen_asig: "nuevayuca" WORD signo_asig valor cierra_linea
+    signo_asig: "="
+    valor: operando | operacion
+    condicion: comparado comparador comparado | comparado | "!" comparado 
     comparador: "==" | "<=" | ">=" | "!=" | ">" | "<"
+    comparado: variable | numero | operacion
+    operacion: operando operador operando
+    operando: numero | variable
+    operador: "+" | "-" | "*" | "/" 
     corchete_abre: "{"
     corchete_cierra: "}"
     llave_abre : "["
     llave_cierra: "]"
     cierra_linea: ".."
+    variable: WORD 
+    numero: INT
     %import common.WS
     %import common.WORD
     %import common.INT
@@ -24,10 +32,10 @@ gramatica = """
 parser = Lark(gramatica)
 print(parser.parse("""
     Myuca {a<b}[
-        sssss..
+        nuevayuca sssss..
         Syuca{b}[
-            verde..
+            nuevayuca verde..
         ]
-        eeeee..
+        nuevayuca rucha..
     ]
 """))
