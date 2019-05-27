@@ -5,7 +5,8 @@ gramatica = """
     sentencias: sentencia sentencias | sentencia
     sentencia: sen_if | sen_for | sen_while | sen_asig | condicion
     sen_if: "Siyuca" corchete_abre condicion corchete_cierra llave_abre sentencias llave_cierra
-    sen_for: "parayuca" condicion llave_abre sentencias llave_cierra
+    sen_for: "parayuca" iteracion llave_abre sentencias llave_cierra
+    iteracion: variable "numero" operando "hasta" numero
     sen_while: "Mientrasyuca" corchete_abre condicion corchete_cierra llave_abre sentencias llave_cierra
     sen_asig: "Nuevayuca" WORD signo_asig valor cierra_linea
     signo_asig: "="
@@ -31,11 +32,11 @@ gramatica = """
 
 parser = Lark(gramatica)
 print(parser.parse("""
-    Myuca {a<b}[
-        nuevayuca sssss..
-        Syuca{b}[
-            nuevayuca verde..
+    Mientrasyuca {a<b}[
+        Nuevayuca yucaxd = 5..
+        Siyuca{b}[
+            Nuevayuca verde=10..
         ]
-        nuevayuca rucha..
+        Nuevayuca rucha=1..
     ]
 """))
