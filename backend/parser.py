@@ -7,7 +7,7 @@ class Parser:
         sentencias: sentencia sentencias | sentencia
         sentencia: sen_if | sen_for | sen_while | sen_asig | condicion | nueva_variable
         sen_if: "Siyuca" corchete_abre condicion corchete_cierra llave_abre sentencias llave_cierra
-        sen_for: "parayuca" iteracion llave_abre sentencias llave_cierra
+        sen_for: "Parayuca" iteracion llave_abre sentencias llave_cierra
         iteracion: variable "desde" operando "hasta" numero
         sen_while: "Mientrasyuca" corchete_abre condicion corchete_cierra llave_abre sentencias llave_cierra
         sen_asig: variable signo_asig operando cierra_linea
@@ -35,12 +35,9 @@ class Parser:
         self.parser = Lark(self.gramatica)
     def parse(self, data):
         print(data)
-        try:
-            response = self.parser.parse(data)
-            return response
-        except:
-            traceback.print_exc()
-            return "error"
+        response = self.parser.parse(data)
+        return response
+        
 #print(parser.parse("""
 #    parayuca a desde 0 hasta 5[
 #        Nuevayuca yucaxd = 5..

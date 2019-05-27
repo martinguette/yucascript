@@ -6,6 +6,7 @@ from rest_framework.renderers import JSONRenderer
 from rest_framework.parsers import JSONParser
 from backend.parser import Parser
 import json
+import traceback
 
 # Create your views here.
 
@@ -30,6 +31,6 @@ def validar(request):
         parser = Parser()
         try:
             res = parser.parse(str(data))
-            return JSONResponse(str(res), status=200)
+            return JSONResponse("Compilación exitosa", status=200)
         except:
-            print("error")
+            return JSONResponse("Error de sintaxis: \n"+traceback.format_exc()[650:],status=200)

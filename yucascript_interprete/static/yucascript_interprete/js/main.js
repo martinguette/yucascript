@@ -15,10 +15,10 @@ function verificar(){
         contentType: 'application/json',
         data: data,
         success: function(data){
-            console.log(data)
+            document.getElementById("terminal").innerHTML = data
         },
         error: function(){
-            console.log("e")
+            document.getElementById("terminal").innerHTML = data
         }
     })
     /*var xhr = new XMLHttpRequest();

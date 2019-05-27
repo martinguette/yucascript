@@ -10,6 +10,7 @@
     <!--Import materialize.css-->
     <link type="text/css" rel="stylesheet" href="{% static 'yucascript_interprete/css/materialize.min.css' %}"  media="screen,projection"/>
     <link type="text/css" rel="stylesheet" href="{% static 'yucascript_interprete/lib/codemirror.css' %}">
+    <link type="text/css" rel="stylesheet" href="{% static 'yucascript_interprete/css/main.css' %}">
     <link rel="stylesheet" href="{% static 'yucascript_interprete/theme/yonce.css' %}">
     <title>Lenguaje</title>
 </head>
@@ -57,6 +58,8 @@
 
     <section>
             <div id="editor"></div>
+            <div class="purple darken-2" style="height:5vh; color: white; padding-left:1%; padding-top: 1%">Terminal</div>
+            <div id="terminal">aa</div>
     </section>
 
     <script type="text/javascript" src="{% static 'yucascript_interprete/js/materialize.min.js' %}"></script>
