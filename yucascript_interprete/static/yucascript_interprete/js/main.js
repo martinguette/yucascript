@@ -6,13 +6,14 @@ document.addEventListener('DOMContentLoaded', function() {
     var instances = M.Modal.init(elems, options);
 });
 function verificar(){
-    console.log(editor.getDoc().getValue())
+    var data = editor.getDoc().getValue()
+    console.log(data)
     $.ajax({
-        url: 'http://127.0.0.1:8000/interprete/validar',
+        url: 'http://127.0.0.1:3200/interprete/validar',
         dataType: 'text',
         type: 'post',
         contentType: 'application/json',
-        data: editor.getDoc().getValue(),
+        data: data,
         success: function(data){
             console.log(data)
         },
@@ -20,6 +21,12 @@ function verificar(){
             console.log("e")
         }
     })
+    /*var xhr = new XMLHttpRequest();
+    xhr.open('POST', "http://127.0.0.1:8000/interprete/validar", true);
+    xhr.send();
+    xhr.onreadystatechange = function(e){
+        console.log(e)
+    }*/
 }
 var editor = CodeMirror(document.getElementById("editor"), {
     lineNumbers: true,
