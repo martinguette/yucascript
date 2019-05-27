@@ -4,10 +4,10 @@ gramatica = """
     start: sentencias
     sentencias: sentencia sentencias | sentencia
     sentencia: sen_if | sen_for | sen_while | sen_asig | condicion
-    sen_if: "Syuca" corchete_abre condicion corchete_cierra llave_abre sentencias llave_cierra
-    sen_for: "Fyuca" condicion llave_abre sentencias llave_cierra
-    sen_while: "Myuca" corchete_abre condicion corchete_cierra llave_abre sentencias llave_cierra
-    sen_asig: "nuevayuca" WORD signo_asig valor cierra_linea
+    sen_if: "Siyuca" corchete_abre condicion corchete_cierra llave_abre sentencias llave_cierra
+    sen_for: "parayuca" condicion llave_abre sentencias llave_cierra
+    sen_while: "Mientrasyuca" corchete_abre condicion corchete_cierra llave_abre sentencias llave_cierra
+    sen_asig: "Nuevayuca" WORD signo_asig valor cierra_linea
     signo_asig: "="
     valor: operando | operacion
     condicion: comparado comparador comparado | comparado | "!" comparado 
