@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+    <link type="text/css" rel="stylesheet" href="lib/codemirror.css">
+    <link rel="stylesheet" href="theme/yonce.css">
+    <title>Lenguaje</title>
+</head>
+<body>
+
+    <header>
+            <nav class="nav-extended">
+                <div class="nav-wrapper purple darken-1">
+                    <img class="brand-logo" src="img/logo.png" height="70" alt="">
+                    <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                    
+                </div>
+                <div class="nav-content purple">
+                    <ul class="tabs tabs-transparent">
+                        <li class="tab waves-effect waves-light modal-trigger" href="#modal1"><a href="#test1">Abrir</a></li>
+                        <li class=" tab waves-effect waves-light"><a href="#test1">Verificar</a></li>
+                    </ul>
+                </div>
+            </nav>
+            <ul class="sidenav" id="mobile-demo">
+                <li><a href="sass.html">Sass</a></li>
+                <li><a href="badges.html">Components</a></li>
+                <li><a href="collapsible.html">Javascript</a></li>
+                <li><a href="mobile.html">Mobile</a></li>
+            </ul>
+            <div id="modal1" class="modal">
+                <div class="modal-content">
+                    <h4>Abrir archivo</h4>
+                    <input type="file" name="archivo" id="archivo">
+                </div>
+                <div class="modal-footer" id="pata">
+                    <a href="#!" class="modal-close waves-effect waves-green btn-flat">Subir</a>
+                </div>
+            </div>
+            <div id="modal2" class="modal">
+                    <div class="modal-content">
+                        <h4>Error</h4>
+                        <p>Solo puedes abrir archivos .yuca</p>
+                    </div>
+                    <div class="modal-footer">
+                            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Aceptar</a>
+                        </div>
+                </div>
+    </header>
+
+    <section>
+            <div id="editor"></div>
+    </section>
+
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script src="lib/codemirror.js"></script>
+    <script src="mode/javascript/javascript.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
