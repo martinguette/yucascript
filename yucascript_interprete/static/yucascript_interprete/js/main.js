@@ -5,6 +5,22 @@ document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('.modal');
     var instances = M.Modal.init(elems, options);
 });
+function verificar(){
+    console.log(editor.getDoc().getValue())
+    $.ajax({
+        url: 'http://127.0.0.1:8000/interprete/validar',
+        dataType: 'text',
+        type: 'post',
+        contentType: 'application/json',
+        data: editor.getDoc().getValue(),
+        success: function(data){
+            console.log(data)
+        },
+        error: function(){
+            console.log("e")
+        }
+    })
+}
 var editor = CodeMirror(document.getElementById("editor"), {
     lineNumbers: true,
     theme: "yonce"
